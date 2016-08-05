@@ -18,7 +18,7 @@ let plugins = [
                   options: { framerate: 24.0,
                              smpteTimecode: true,
                              frameControls: true
-                  }
+                           }
                 }
               ]
 ```
