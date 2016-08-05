@@ -23,12 +23,12 @@ let plugins = [
               ]
 ```
 ## Available Props
-File URL - URL to streaming file
+```File URL - URL to streaming file
 MIME type - MIME type of streaming file
 VideoJS Player Options - object literal containing config options for VideoJS player instance
 Plugins - array of VideoJS plugins stored as object literals
 Store - option to connect to Redux Store
-
+```
 ## License
 
 MIT. Copyright (c) jjromphf &lt;jromphf@library.rochester.edu&gt;
