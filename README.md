@@ -2,8 +2,6 @@
 
 Yet Another React Video Component
 
-## Table of Contents
-
 <!-- START doctoc -->
 <!-- END doctoc -->
 ## Installation and Usage
