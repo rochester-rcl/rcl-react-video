@@ -1,40 +1,28 @@
-var path = require("path");
 var webpack = require('webpack');
-var BundleTracker = require('webpack-bundle-tracker');
+var path = require('path');
+var ROOT_PATH = path.resolve(__dirname);
+
 
 module.exports = {
-  context: __dirname,
-  entry: [
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
-      './index'
-  ],
-
+  entry: path.resolve(ROOT_PATH, 'example/index'),
   output: {
-      path: path.resolve('./bundles/'),
-      filename: 'main.js',
-      publicPath: 'http://localhost:3000/bundles/' // Tell django to use this URL to load packages and not use STATIC_URL + bundle_name
+    path: path.resolve(ROOT_PATH, 'example/static'),
+    filename: 'bundle.js'
   },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(), // don't reload if there is an error
-    new BundleTracker({filename: './webpack-stats.json'})
-  ],
-
-    module: {
-        loaders: [
-            // we pass the output from babel loader to react-hot loader
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
-            }
-        ]
-    },
-
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js', '.jsx']
-  }
+      modulesDirectories: ['node_modules'],
+      extensions: ['', '.js', '.jsx']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['babel'],
+      }
+    ],
+    noParse: [
+            /node_modules[\\/]video\.js/
+        ],
+  },
 };

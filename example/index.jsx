@@ -8,7 +8,7 @@ import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
 // Containers
-import VideoContainer from './containers/videoContainer';
+import VideoContainer from '../src/containers/videoContainer';
 
 // VJS Plugins
 import nleControls  from './plugins/videojs-nle-controls.min';
