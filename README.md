@@ -6,21 +6,25 @@ Yet Another React Video Component
 <!-- END doctoc -->
 ## Installation and Usage
 
-Clone this repo and `import VideoContainer from './lib/containers/videoContainer';` into your js entry point.
+Clone this repo and ```js import VideoContainer from './lib/containers/videoContainer';` into your js entry point. ```
 
 import any VideoJS plugins into your js entry point and add them to the plugins array. Configure your plugins as object literals:
-```
+
+```js
 import nleControls  from './plugins/videojs-nle-controls.min';
 
 let plugins = [
-                { plugin: nleControls,
-                  name: 'nleControls',
-                  options: { framerate: 24.0,
-                             smpteTimecode: true,
-                             frameControls: true
-                           }
-                }
-              ]
+    {
+        plugin: nleControls,
+        name: 'nleControls',
+        options: {
+            framerate: 24.0,
+            smpteTimecode: true,
+            frameControls: true
+        }
+    }
+]
+
 ```
 A working React example can be found in the example directory. To build the example, run `npm run build:example`
 ## Available Props
