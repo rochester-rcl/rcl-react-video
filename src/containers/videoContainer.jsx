@@ -13,7 +13,7 @@ class VideoContainer extends Component {
   render(){
     const { fileUrl, mime, playerOptions, plugins } = this.props;
     return(
-      <VideoPlayer src={fileUrl} mime={mime} playerOptions={{"controls": true, "inactivityTimeout": false}} plugins={plugins}/>
+      <VideoPlayer src={fileUrl} mime={mime} playerOptions={playerOptions} plugins={plugins}/>
     );
   }
 }

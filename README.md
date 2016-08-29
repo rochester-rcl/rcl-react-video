@@ -24,12 +24,13 @@ let plugins = [
         }
     }
 ]
-
 ```
+All of the heavy lifting is done in src/components/videoPlayer.jsx. A sample container can be found in src/containers.
+You could use this to connect to a Redux store or pass props down by hand.
 A working React example can be found in the example directory. To build the example, run `npm run build:example`
 ## Available Props
 ```
-File URL - URL to streaming file
+SRC - URL to streaming file
 MIME type - MIME type of streaming file
 VideoJS Player Options - object literal containing config options for VideoJS player instance
 Plugins - array of VideoJS plugins stored as object literals

@@ -54,5 +54,6 @@ export default class VideoPlayer extends Component {
 VideoPlayer.propTypes = {
     src: PropTypes.string.isRequired,
     playerOptions: PropTypes.object,
+    mime: PropTypes.string.isRequired,
     plugins: PropTypes.array,
 }
