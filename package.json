@@ -29,6 +29,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "build:example": "webpack",
+    "watch:example": "webpack --watch",
     "flow": "flow; test $? -eq -o $? -eq 2",
     "flow:src": "flow src/",
     "flow:example": "flow example/"
