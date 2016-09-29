@@ -33,5 +33,5 @@ let playerOptions = {
 }
 
 ReactDOM.render(
-  <VideoContainer fileUrl={'http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov'} mime={'video/webm'} playerOptions={playerOptions} plugins={plugins}/>, // These props could also be received from a Redux store - just set the store up here
+  <VideoContainer src=[{src: 'http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov', type: 'video/mov'}] playerOptions={playerOptions} plugins={plugins}/>, // These props could also be received from a Redux store - just set the store up here
     document.getElementById('test'));

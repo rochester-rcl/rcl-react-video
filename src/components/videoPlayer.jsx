@@ -29,7 +29,7 @@ export default class VideoPlayer extends Component {
   }
   // Player related methods
   initPlayer(): void{
-    let src: string = this.props.src;
+    let src: object = this.props.src;
     let options: Array<Object> = this.props.playerOptions
     this.player = videojs(this.getPlayerElement(), options);
     this.player.src(src);
@@ -52,8 +52,7 @@ export default class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
-    src: PropTypes.string.isRequired,
+    src: PropTypes.array.isRequired,
     playerOptions: PropTypes.object,
-    mime: PropTypes.string.isRequired,
     plugins: PropTypes.array,
 }
