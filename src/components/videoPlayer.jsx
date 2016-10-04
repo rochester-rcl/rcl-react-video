@@ -6,6 +6,9 @@ import React, { Component, PropTypes } from 'react';
 // VideoJS
 import videojs from 'video.js';
 
+// Lodash
+import lodash from 'lodash';
+
 export default class VideoPlayer extends Component {
   constructor(props: Object) {
     super(props);
@@ -17,7 +20,8 @@ export default class VideoPlayer extends Component {
   componentWillReceiveProps(nextProps: Object): void{
     let currentSrc: string = this.props.src;
     let newSrc: string = nextProps.src;
-    if(currentSrc !== newSrc) {
+    console.log()
+    if(!lodash.isEqual(currentSrc, newSrc)) {
       this.setSrc(newSrc);
     }
   }
@@ -47,7 +51,7 @@ export default class VideoPlayer extends Component {
     return this.refs.videoJSPlayer;
   }
   setSrc(src: string) {
-    this.player.src = src;
+    this.player.src(src);
   }
 }
 
