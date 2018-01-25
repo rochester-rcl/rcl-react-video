@@ -1,5 +1,5 @@
 # rcl-react-redux-boilerplate
-Finally! A template for all of our React projects. This template currently integrates the following into the React stack:
+A template we can use for some of our React projects. This template currently integrates the following into the React stack:
 
 [Redux](https://github.com/reactjs/redux) - for state management
 
