@@ -1,0 +1,38 @@
+.app-video-container {
+  display: flex;
+  align-self: center;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 90%;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mediate-player-seekbar-canvas {
+  width: 100%;
+  height: auto;
+  position: relative;
+  -webkit-user-drag: element;
+  cursor: pointer;
+  background-color: #222;
+  padding: 10px;
+}
+
+.mediate-video-player {
+  flex: 0.6;
+  display: block;
+  position: relative !important;
+}
+
+.mediate-player-seekbar-container {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border: 2px solid #333;
+  display: flex;
+  flex: 0.4;
+  border-radius: 5px;
+  -webkit-user-drag: none;
+  margin-top: 20px;
+  min-height: 50px;
+}

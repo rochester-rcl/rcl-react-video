@@ -1,5 +1,16 @@
+@import url("mediate-seekbar.css");
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #111 !important;
+}
+
+.app-root-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }

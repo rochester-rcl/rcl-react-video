@@ -1,20 +1,58 @@
 /* @flow */
 
 // React
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // Redux
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 // Actions
-import * as AppActionCreators from '../actions/actions';
+import * as AppActionCreators from "../actions/actions";
+
+// Video Container
+import VideoContainer from "./VideoContainer";
 
 // Semantic UI
-import { Icon } from 'semantic-ui-react';
+import { Icon } from "semantic-ui-react";
 
 // CSS
-import 'semantic-ui-css/semantic.css';
+import "semantic-ui-css/semantic.css";
+import "../css/index.css";
+// plugins
+import NLEControls from "../vjs-plugins/NLEControls";
+
+const sources = {
+  mediaFiles: [
+    {
+      src:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      type: "video/mp4",
+      framerate: 24,
+    }
+  ],
+  duration: 500
+};
+
+const plugins = [
+  {
+    plugin: NLEControls,
+    name: "NLEControls",
+    options: {
+      framerate: sources.mediaFiles[0].framerate,
+      smpteTimecode: true,
+      frameControls: true,
+
+    }
+  }
+];
+
+// VJS Options
+const playerOptions = {
+  controls: true,
+  inactivityTimeout: false,
+  fluid: true
+};
 
 class App extends Component {
   componentDidMount() {
@@ -25,11 +63,11 @@ class App extends Component {
     const { children, data } = this.props;
     return (
       <div className="app-root-container">
-        <h4>This app doesnt do much right now, but you should see a line below to show that redux / redux-saga is working</h4>
-        {data[0]}
-        <h4>Also if you dont see this --></h4><Icon name='thumbs outline up' size="huge"/><h4> semantic ui isnt working</h4>
-
-        {children}
+        <VideoContainer
+          src={sources.mediaFiles}
+          playerOptions={playerOptions}
+          plugins={plugins}
+        />
       </div>
     );
   }
@@ -38,8 +76,8 @@ class App extends Component {
 function mapStateToProps(state) {
   // Do sorting here
   return {
-    data: state.data,
-  }
+    data: state.data
+  };
 }
 
 function mapActionCreatorsToProps(dispatch: Object) {
